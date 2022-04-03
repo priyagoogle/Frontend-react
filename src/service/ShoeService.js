@@ -1,13 +1,13 @@
 import axios from 'axios';
-const URL = 'http://localhost:8080/product/shoes'
+const URL = 'http://localhost:8080/shoes'
 class ShoeService{
     getShoes(){
-        return axios.get(URL);
+        return axios.get('http://localhost:8080/viewShoes');
     }
 
     createShoe(shoe){
 
-        return axios.post(URL, shoe);
+        return axios.post('http://localhost:8080/createShoe', shoe);
 
     }
 
@@ -21,7 +21,7 @@ class ShoeService{
     }
 
     deleteShoe(id){
-        return axios.delete(URL + '/' + id);
+        return axios.delete('http://localhost:8080/deleteShoe'+'/' + id);
     }
 
 
